@@ -40,6 +40,7 @@ def get_filelist(dir):
 
 
 async def main():
+    print("测试1")
     files = get_filelist("./Source")
     tasks = []
 
