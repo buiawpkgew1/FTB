@@ -164,7 +164,7 @@ def escape_quotes(data):
         return data
 
 def normal_json2_ftb_desc(origin_en_us):
-    en_json = json.loads(origin_en_us)
+    en_json = json.loads(json.dumps(origin_en_us))
     temp_set = set()
     temp_en_json = {}
     for key, value in list(en_json.items()):
@@ -197,7 +197,7 @@ def main() -> None:
             continue;
         save_translation(zh_cn_dict, Path(path))
         print(f"已从Patatranz下载到仓库：{re.sub('en_us.json', 'zh_cn.json', path)}")
-    snbt_dict = normal_json2_ftb_desc(str(ftbquests_dict))
+    snbt_dict = normal_json2_ftb_desc(ftbquests_dict)
     
     json_data = json.dumps(snbt_dict)
     # Escape quotation marks in the translated data
