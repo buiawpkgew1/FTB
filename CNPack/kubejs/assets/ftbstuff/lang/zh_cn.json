@@ -84,7 +84,7 @@
     "block.ftbstuff.red_barrel":"红色桶",
     "block.ftbstuff.small_crate":"小型板条箱",
     "block.ftbstuff.spruce_water_strainer":"云杉木滤水器",
-    "block.ftbstuff.stone_cobblestone_generator":"石制造石机",
+    "block.ftbstuff.stone_cobblestone_generator":"石造石机",
     "block.ftbstuff.super_cooler":"“超级”冷却器",
     "block.ftbstuff.super_cooler.tooltip":"用于将物品“超级”冷却产出新产物",
     "block.ftbstuff.tempered_jar":"强化玻璃罐",
@@ -151,5 +151,5 @@
     "item.ftbstuff.stone_hammer":"石锤",
     "item.ftbstuff.stone_rod":"石棍",
     "item.ftbstuff.tempered_glass":"强化玻璃",
-    "item.ftbstuff.water_bowl":"Water Bowl"
+    "item.ftbstuff.water_bowl":"水碗"
 }
