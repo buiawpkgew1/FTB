@@ -163,8 +163,9 @@ def escape_quotes(data):
     else:
         return data
 
-def normal_json2_ftb_desc(origin_en_us):
-    en_json = json.loads(json.dumps(origin_en_us))
+def  normal_json2_ftb_desc(origin_en_us):
+    en_json = json.dumps(origin_en_us)
+    en_json = eval(en_json)
     temp_set = set()
     temp_en_json = {}
     for key, value in list(en_json.items()):
@@ -182,7 +183,7 @@ def normal_json2_ftb_desc(origin_en_us):
     en_json.update(temp_en_json)
 
     print("NormalJson2FtbDesc end...")
-    return json.dumps(en_json,indent=4, ensure_ascii=False)
+    return json.dumps(en_json)
 
 def main() -> None:
     get_files()
@@ -199,7 +200,8 @@ def main() -> None:
         print(f"已从Patatranz下载到仓库：{re.sub('en_us.json', 'zh_cn.json', path)}")
     snbt_dict = normal_json2_ftb_desc(ftbquests_dict)
     
-    json_data = json.dumps(snbt_dict)
+    json_data = json.dumps(snbt_dict,ensure_ascii=False, indent=4, separators=(",", ":"))
+    print(json_data)
     # Escape quotation marks in the translated data
     json_data = escape_quotes(json_data)
 
@@ -210,7 +212,7 @@ def main() -> None:
     formatted_snbt_string = format_snbt(nbt_data)
 
     # Optionally save the formatted SNBT to a file
-    with open('CNPack/config/ftbquests/quests/lang/zh_cn.snbt', 'w+', encoding='utf-8') as snbt_file:
+    with open('CNPack/config/ftbquests/quests/lang/zh_cn.snbt', 'w', encoding='utf-8') as snbt_file:
         snbt_file.write(formatted_snbt_string)
     
 if __name__ == "__main__":
