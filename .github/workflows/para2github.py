@@ -165,6 +165,7 @@ def escape_quotes(data):
 
 def normal_json2_ftb_desc(origin_en_us):
     en_json = json.dumps(origin_en_us)
+    en_json = eval(en_json)
     temp_set = set()
     temp_en_json = {}
     for key, value in list(en_json.items()):
