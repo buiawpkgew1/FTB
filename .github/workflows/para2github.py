@@ -211,7 +211,7 @@ def main() -> None:
     formatted_snbt_string = format_snbt(nbt_data)
 
     # Optionally save the formatted SNBT to a file
-    with open('CNPack/config/ftbquests/quests/lang/zh_cn.snbt', 'w', encoding='utf-8') as snbt_file:
+    with open('CNPack/config/ftbquests/quests/lang/zh_cn.snbt', 'w+', encoding='utf-8') as snbt_file:
         snbt_file.write(formatted_snbt_string)
     
 if __name__ == "__main__":
