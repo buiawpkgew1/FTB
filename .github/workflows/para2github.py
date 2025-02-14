@@ -200,7 +200,7 @@ def main() -> None:
         print(f"已从Patatranz下载到仓库：{re.sub('en_us.json', 'zh_cn.json', path)}")
     snbt_dict = normal_json2_ftb_desc(ftbquests_dict)
     
-    json_data = json.dumps(snbt_dict)
+    json_data = json.dumps(snbt_dict,ensure_ascii=False, indent=4, separators=(",", ":"))
     # Escape quotation marks in the translated data
     json_data = escape_quotes(json_data)
 
