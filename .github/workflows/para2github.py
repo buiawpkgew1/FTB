@@ -126,7 +126,7 @@ def main() -> None:
         zh_cn_dict = process_translation(file_id, Path(path))
         zh_cn_list.append(zh_cn_dict)
         if "kubejs/assets/quests/lang/" in path:
-            ftbquests_dict = dict(ftbquests_dict.items() +  zh_cn_dict.items())
+            ftbquests_dict = ftbquests_dict | zh_cn_dict
             continue;
         save_translation(zh_cn_dict, Path(path))
         print(f"已从Patatranz下载到仓库：{re.sub('en_us.json', 'zh_cn.json', path)}")
