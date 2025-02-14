@@ -164,7 +164,7 @@ def escape_quotes(data):
         return data
 
 def  normal_json2_ftb_desc(origin_en_us):
-    en_json = json.dumps(origin_en_us,ensure_ascii=False, indent=4, separators=(",", ":"))
+    en_json = json.dumps(origin_en_us,ensure_ascii=False, indent=4, separators=(",", ":"),sort_keys=True)
     en_json = eval(en_json)
     temp_set = set()
     temp_en_json = {}
@@ -209,7 +209,6 @@ def main() -> None:
 
     # Format the NBT structure as a pretty-printed SNBT string
     formatted_snbt_string = format_snbt(nbt_data)
-    print(formatted_snbt_string)
     # Optionally save the formatted SNBT to a file
     with open('CNPack/config/ftbquests/quests/lang/zh_cn.snbt', 'w', encoding='utf-8') as snbt_file:
         snbt_file.write(formatted_snbt_string)
