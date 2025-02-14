@@ -164,8 +164,12 @@ def escape_quotes(data):
         return data
 
 def  normal_json2_ftb_desc(origin_en_us):
-    en_json = json.dumps(origin_en_us)
+    en_json = json.dumps(origin_en_us,ensure_ascii=False, indent=4, separators=(",", ":"))
+    print(1)
+    print(en_json)
     en_json = eval(en_json)
+    print(2)
+    print(en_json)
     temp_set = set()
     temp_en_json = {}
     for key, value in list(en_json.items()):
@@ -183,7 +187,7 @@ def  normal_json2_ftb_desc(origin_en_us):
     en_json.update(temp_en_json)
 
     print("NormalJson2FtbDesc end...")
-    return json.dumps(en_json)
+    return en_json
 
 def main() -> None:
     get_files()
