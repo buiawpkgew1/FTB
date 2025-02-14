@@ -114,7 +114,7 @@
     "ftbstuff.jar_status.output_full":"输出槽已满",
     "ftbstuff.jar_status.ready":"准备合成",
     "ftbstuff.jei.loot_summary":"战利品列表信息",
-    "ftbstuff.jei.loot_summary.pool":"Pool: %s",
+    "ftbstuff.jei.loot_summary.pool":"生成池：%s",
     "ftbstuff.jei.loot_summary.pool_header":"Loot table has %d loot pools:",
     "ftbstuff.jei.loot_summary.too_many":"%s more loot entries are not displayed",
     "ftbstuff.making":"Making:",
