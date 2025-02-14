@@ -183,7 +183,7 @@ def normal_json2_ftb_desc(origin_en_us):
     en_json.update(temp_en_json)
 
     print("NormalJson2FtbDesc end...")
-    return eval(en_json)
+    return en_json
 
 def main() -> None:
     get_files()
