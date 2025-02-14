@@ -119,17 +119,18 @@ def process_translation(file_id: int, path: Path) -> dict[str, str]:
 
 def main() -> None:
     get_files()
-
+    ftbquests_dict = {}
     for file_id, path in zip(file_id_list, file_path_list):
         if "TM" in path:  # 跳过 TM 文件
             continue
-
         zh_cn_dict = process_translation(file_id, Path(path))
         zh_cn_list.append(zh_cn_dict)
-
+        if "Source/kubejs/assets/quests/lang/" in path:
+            ftbquests_dict = dict(ftbquests_dict.items() +  zh_cn_dict.items())
+            continue;
         save_translation(zh_cn_dict, Path(path))
         print(f"已从Patatranz下载到仓库：{re.sub('en_us.json', 'zh_cn.json', path)}")
-
+    save_translation(ftbquests_dict,Path("./CNPack/kubejs/assets/quests/lang/zh_cn.json"))
 
 if __name__ == "__main__":
     main()
