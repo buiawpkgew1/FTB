@@ -42,18 +42,17 @@ jobs:
             git add .
             git commit -m '从Paratranz同步翻译'
             git push origin main
-            env CHANGED = true
-            echo ${{env.CHANGED}}
+            CHANGED = true
           else
-            echo CHANGED = false
-            echo ${{env.CHANGED}}
+            CHANGED = false
           fi
-    outputs:
-      changed: ${{ steps.commit.env.changed }}
+          echo "::set-env name=CHANGED::$CHANGED"
+          echo $CHANGED
   release:
     name: Create Release
     runs-on: ubuntu-latest
     needs: paratranz-to-gitHub
+    if: ${{env.CHANGED == true}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
