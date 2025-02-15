@@ -1,60 +1,64 @@
 <div align="center"> 
+   <img height="256px" width="256px" alt="logo" src="https://www.feed-the-beast.com/_next/image?url=https%3A%2F%2Fcdn.feed-the-beast.com%2Fblob%2Ffa%2Ffae647b9fa950ab09081ca6b395ea02dd06c7532b09b22fc3eb035b3092f7f78.png&w=640&q=75"/>
    <h1>FTB Oceanblock 2 项目简体中文翻译</h1>
 </div>
 
-CurseForge|加载器|整合包版本|汉化维护状态
-:-:|:-:|:-:|:-:
-[链接](原链接)| NeoForge |1.21.1 1.0.0|*翻译中*
+| FTB官网                                                        | 加载器   | 支持整合包版本 | 汉化维护状态 |
+| :------------------------------------------------------------- | :------- | :------------- | :----------- |
+| <https://www.feed-the-beast.com/modpacks/128-ftb-oceanblock-2> | Neoforge | mc1.21.1 1.0.0 | 翻译中       |
 
 ---
 
 汉化项目：[Paratranz](https://paratranz.cn/projects/13486)
 
-汉化发布：[VM汉化组官网](https://vmct-cn.top/modpacks/项目)
+汉化发布：[VM汉化组官网](https://vmct-cn.top/modpacks/oceanblock2)
 
 项目主管：[荔枝](https://github.com/Litchiiiiii)
 
 译者：[查看贡献者排行榜](https://paratranz.cn/projects/13486/leaderboard)
 
-
 ---
 
-# 整合包介绍
+# 特色
 
-整合包介绍
+## 深入探索进度
+从附近的残骸中搜寻你能收集的资源，学习自动化基础资源，为科技和能源打下基础，并准备好装备以在深海的压迫下生存。
 
-# 自动化Paratranz同步教程
+## 水下进化
+你的潜水服必须加压才能在这颗星球的深海压力中生存，这颗星球的技术必须深入海底才能获得。
 
-## 1. 设置环境变量
+## 精心策划的冒险
+水下有淹没的建筑、神秘的挑战和隐藏的文物等待你去发现和探索，了解那些未能幸存者的遭遇。
 
-1. 到仓库顶部导航栏: `Settings -> Environments -> New environment` 新建 `PARATRANZ_ENV`
-2. 添加加密变量（Environment secrets）: 
-   | 名称        | 值                                              |
-   |-------------|-------------------------------------------------|
-   | API_KEY     | 你的Paratranz token，须有上传文件权限         |
-   token可在 <https://paratranz.cn/users/my> 中的设置部分获取。
-3. 添加环境变量（Environment variables）: 
+## 探索危险的新维度
+熔岩维度与你所知的完全不同，而裂隙似乎是你为了逃离这颗星球而冒险前往的地方，但它不适合装备不足的人。高风险带来高回报。
 
-   | 名称   | 值                                   |
-   |--------|--------------------------------------|
-   | ID     | Paratranz项目ID，例如 `10719`         |
+## 无情的黑暗深渊
+首次与定制的裂隙水生野兽和怪物战斗。
 
+## 奖励丰厚的任务线
+通过整合包的体验，获得奖励并提高你对关键模组的效率。
 
-## 2. 开始使用
+# 知名模组
 
-我们的工作流有两种功能：从Paratranz同步到github仓库和从github仓库同步到Paratranz。
+## Oritech
+利用地表下的神秘能量，制造机器、工具和燃料，这些将极大地帮助你的旅程。
 
-它们全都可以手动启动，操作方法请见下图所示：
+## Replication
+在这个水世界中，陆地资源可能匮乏，但通过Replication模组创造的设备，你可以自动化并生产更多你原有的资源，使用从原始材料中扫描的物质。
 
-![](.github/action.png)
+## Nautec
+探索海洋深处，发现强大而危险的新技术。用海洋之心激活棱镜激光，精炼和净化水生材料以生存。
 
-其中，Paratranz同步到GitHub仓库工作流会在北京时间每天早上9点和晚上9点自动运行。
+## 实用拓展
+在星球上独自生活一段时间后，你开始深入冒险，进化你的生存能力，能够利用技术进步进一步分类物品、传输能量和物品，并生成更多类型的能源对你的旅程至关重要。
 
-下载译文至Github功能可自行修改`.github/workflows`文件夹中的`download_release.yml`自动执行时间，格式为[cron表达式](https://blog.csdn.net/Stromboli/article/details/141962560)。
+## 末影接口
+随着知识的增加，科技也在进步，创造更多的机器、盔甲、武器、附魔和各种其他类型的能源，为你的水下进化提供动力，提高你在如此险恶的星球上的整体生存能力。
 
-在有译文更改后，工作流会自动生成一个artifact构件，可在action的运行页面找到并下载。
-此外，每有一次译文更改都将自动发布一次标记为预发布的Release。
+## Just Dire Things
+随着你开发的机器、工具和装备库，你将获得更多的材料，通过前往更多地点，包括你在OceanBlock 2旅程中访问的维度，你将获得更多的工具、更多的装备和更多的资源！
 
-注：从github仓库同步到Paratranz的工作流很少使用，故支持手动触发。
+## 神秘农业
+你可能会变得越来越技术先进，但为了维持自己，你需要精通种植，这种种植解锁了更多工具、材料和魔法进步的可能性！
 
-如果项目已经完成，请在仓库设置（`Settings`）中禁用工作流运行。
