@@ -1,5 +1,5 @@
 <div align="center"> 
-   <h1>FTb Oceanblock 2 项目简体中文翻译</h1>
+   <h1>FTB Oceanblock 2 项目简体中文翻译</h1>
 </div>
 
 CurseForge|加载器|整合包版本|汉化维护状态
