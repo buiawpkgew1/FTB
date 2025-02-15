@@ -4863,7 +4863,7 @@
         ""
         "这台机器只有直接放在&a矿物点&r上时才能工作，必须使用&a末影激光器&r供能。"
         ""
-        "When right-clicked, it will show the targeted &aResource Nodes&r below. It will target the first visible ore node in a 3x3 area below, up to 3 blocks down."
+        "右击时，矿机会显示其下方的目标&a资源节点&r。其将会标记下方三格3x3范围内第一个可见的资源节点"
         ""
         "When in operation, the &cBedrock Extractor&r mines ores directly below it, covering the entire 3x3 area. Each operation randomly selects one of the blocks below. Not all blocks need to be &aResources Nodes&r. Try to find a spot with the most ores right below the extractor for the highest yield."
     ]
