@@ -42,11 +42,10 @@ jobs:
             git add .
             git commit -m '从Paratranz同步翻译'
             git push origin main
-            echo ${{env.CHANGED}} = true
-            echo "111"
+            env CHANGED = true
             echo ${{env.CHANGED}}
           else
-            echo ${{env.CHANGED}} = false
+            echo CHANGED = false
             echo ${{env.CHANGED}}
           fi
     outputs:
