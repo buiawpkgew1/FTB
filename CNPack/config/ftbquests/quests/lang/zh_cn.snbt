@@ -4865,7 +4865,7 @@
         ""
         "右击时，矿机会显示其下方的目标&a资源节点&r。其将会标记下方三格3x3范围内第一个可见的资源节点"
         ""
-        "When in operation, the &cBedrock Extractor&r mines ores directly below it, covering the entire 3x3 area. Each operation randomly selects one of the blocks below. Not all blocks need to be &aResources Nodes&r. Try to find a spot with the most ores right below the extractor for the highest yield."
+        "运行时，&c基岩层矿机&r"
     ]
     quest.46BB702F2847F818.quest_desc:[
         "把红石丢到激光上就可以得到&a红石水晶&r，很多&6实用拓展&r的合成配方都需要它。"
