@@ -40,12 +40,12 @@ jobs:
             git add .
             git commit -m '从Paratranz同步翻译'
             git push origin main
-            echo "changed=true" >> $GITHUB_ENV
+            echo "CHANGED=true" >> $GITHUB_ENV
             echo "111"
-            echo "changed is $changed"
+            echo "CHANGED is $CHANGED"
           else
-            echo "changed=false" >> $GITHUB_ENV
-            echo "changed is $changed"
+            echo "CHANGED=false" >> $GITHUB_ENV
+            echo "CHANGED is $CHANGED"
           fi
     outputs:
       changed: ${{ steps.commit.env.changed }}
