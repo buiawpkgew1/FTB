@@ -1,4 +1,4 @@
-name: Paratranz To GitHub
+name: Paratranz到GitHub
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   paratranz-to-gitHub:
-    name: Paratranz To GitHub
+    name: Paratranz到GitHub
     environment: PARATRANZ_ENV
     runs-on: ubuntu-latest
     env:
@@ -19,23 +19,23 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }} # 定义输出变量
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
+      - name: 设置Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - name: Install dependencies
+      - name: 安装依赖项
         run: |
           pip install requests
           pip install nbtlib
-      - name: Configure Git
+      - name: 配置Git
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "VM[BOT]"
-      - name: Checkout main branch
+          git config --global user.name "[BOT]"
+      - name: 结帐主分支
         run: git checkout main
-      - name: Paratranz To GitHub
+      - name: Paratranz到GitHub
         run: python .github/workflows/para2github.py
-      - name: Commit changes
+      - name: 提交更改
         id: commit
         run: |
           if [[ -n $(git status -s) ]]; then
@@ -49,30 +49,30 @@ jobs:
             echo "译文不变，取消发布release！"
           fi
   release:
-    name: Create Release
+    name: 创建发布
     runs-on: ubuntu-latest
     environment: PARATRANZ_ENV
     needs: paratranz-to-gitHub
     if: ${{ needs.paratranz-to-gitHub.outputs.changed == 'true' }}
     steps:
-      - name: Checkout
+      - name: 结帐
         uses: actions/checkout@v4
       - name: Upload CNPack folder
         uses: actions/upload-artifact@v4
         with:
           name: CNPack
           path: ${{ github.workspace }}/CNPack
-      - name: Get current datetime for tag
+      - name: 获取标签的当前日期时间
         id: datetime
         run: echo "datetime=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
-      - name: Zip CNPack folder
+      - name: Zip CNPack文件夹
         run: zip -r "${{ env.datetime }}.zip" ./CNPack
-      - name: Upload artifact
+      - name: 上传神器
         uses: actions/upload-artifact@v4
         with:
           name: "${{ env.datetime }}.zip"
           path: "${{ env.datetime }}.zip"
-      - name: Create Release
+      - name: 创建发布
         uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ env.datetime }}.zip"
