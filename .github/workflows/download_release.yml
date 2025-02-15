@@ -24,7 +24,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install requests
-          pip install nbtlib
       - name: Configure Git
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" && \
@@ -40,18 +39,17 @@ jobs:
             git add .
             git commit -m '从Paratranz同步翻译'
             git push origin main
-            CHANGED = true
+            echo "changed=true" >> $GITHUB_ENV
           else
-            CHANGED = false
+            echo "changed=false" >> $GITHUB_ENV
           fi
-          echo "::set-env name=CHANGED::$CHANGED"
-          echo $CHANGED
+    outputs:
+      changed: ${{ steps.commit.env.changed }}
   release:
     name: Create Release
     runs-on: ubuntu-latest
-    environment: PARATRANZ_ENV
     needs: paratranz-to-gitHub
-    if: ${{env.CHANGED == true}}
+    if: ${{ needs.paratranz-to-gitHub.outputs.changed == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
