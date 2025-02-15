@@ -41,6 +41,8 @@ jobs:
             git commit -m '从Paratranz同步翻译'
             git push origin main
             echo "changed=true" >> $GITHUB_ENV
+            echo "111"
+            echo ${{ steps.commit.env.changed }}
           else
             echo "changed=false" >> $GITHUB_ENV
           fi
