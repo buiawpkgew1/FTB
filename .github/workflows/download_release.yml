@@ -35,17 +35,19 @@ jobs:
         run: python .github/workflows/para2github.py
       - name: Commit changes
         id: commit
+        env: 
+          CHANGED: false
         run: |
           if [[ -n $(git status -s) ]]; then
             git add .
             git commit -m '从Paratranz同步翻译'
             git push origin main
-            echo "CHANGED=true" >> $GITHUB_ENV
+            echo ${{env.CHANGED}} = true
             echo "111"
-            echo "CHANGED is $CHANGED"
+            echo ${{env.CHANGED}}
           else
-            echo "CHANGED=false" >> $GITHUB_ENV
-            echo "CHANGED is $CHANGED"
+            echo ${{env.CHANGED}} = false
+            echo ${{env.CHANGED}}
           fi
     outputs:
       changed: ${{ steps.commit.env.changed }}
